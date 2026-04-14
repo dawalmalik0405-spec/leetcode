@@ -14,5 +14,5 @@ def remove():
 
 k = remove()
 
-print(nums[:k]
+print(nums[:k])
 
