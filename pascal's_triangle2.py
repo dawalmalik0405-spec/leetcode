@@ -3,7 +3,7 @@ numrows = 3
 
 triangle = []
 
-for i in range(numrows):
+for i in range(numrows+1):
   row = [1]*(i+1)
 
   for j in range(1,i):
@@ -11,7 +11,7 @@ for i in range(numrows):
 
   triangle.append(row)
 
-print(triangle)
+print(triangle[-1])
 
 
 
