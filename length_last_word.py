@@ -2,4 +2,4 @@ s = "Hello World"
 
 l = s.split()
   
-print(l)
+print(len(l[-1]))
