@@ -8,3 +8,4 @@ if clean[::-1] == clean:
 
 else:
     print(False) 
+
