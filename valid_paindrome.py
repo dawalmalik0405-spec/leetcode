@@ -1,11 +1,13 @@
-s = "A man, a plan, a canal: Panama"
+c = "racecar"
+def valid_palindrom2():
+  left = 0
+  right = len(c) - 1
 
+  while left <= right:
+      if c[left] != c[right]:
+          return False
 
-clean = "".join(ch.lower() for ch in s if ch.isalnum())
+      left += 1
+      right -= 1
 
-if clean[::-1] == clean:
-    print(True)
-
-else:
-    print(False) 
-
+  return True
