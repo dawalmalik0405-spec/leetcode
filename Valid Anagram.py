@@ -7,9 +7,6 @@ class Solution(object):
         frequency_s = {}
         frequency_t = {}
 
-# count characters in s
-
-# count characters in t 
 
         if len(s) != len(t):
             return False
