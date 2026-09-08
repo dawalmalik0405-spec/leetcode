@@ -3,9 +3,9 @@ def reverseList(self, head):
     current = head
 
     while current:
-        next_node = current.next_node
+        next_node = current.next
 
-        current.next_node = previous 
+        current.next = previous 
 
         previous = current 
 
