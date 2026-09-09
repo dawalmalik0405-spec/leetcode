@@ -11,10 +11,8 @@ def tree_order_traversal(root):
 
         for i in range(len(queue)):
 
-            
             node = queue.pop(0)
             current_level.append(node.val)
-            
 
             if node.left:
                 queue.append(node.left)
@@ -29,5 +27,3 @@ def tree_order_traversal(root):
         result.append(current_level)
 
     return result
-
-  
