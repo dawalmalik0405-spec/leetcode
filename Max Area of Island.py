@@ -1,32 +1,55 @@
-class Solution:
-    def maxAreaOfIsland(self, grid):
-        rows = len(grid)
-        cols = len(grid[0])
-        max_area = 0
+grid = [
+    [0, 1, 1],
+    [1, 1, 0],
+    [0, 1, 0]
+]
 
-        def dfs(r, c):
-            # Out of bounds or water
-            if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] == 0:
-                return 0
+visited = set()
 
-            # Mark as visited
-            grid[r][c] = 0
+directions = [
+                (-1, 0),  # up
+                (1, 0),   # down
+                (0, -1),  # left
+                (0, 1)    # right
+            ]
+max_area = 0
 
-            # Count current cell
-            area = 1
+def dfs(row, col):
+    
 
-            # Explore 4 directions
-            area += dfs(r + 1, c)
-            area += dfs(r - 1, c)
-            area += dfs(r, c + 1)
-            area += dfs(r, c - 1)
+    if row < 0 or row >= len(grid):
+        return 0
 
-            return area
+    if col < 0 or col >= len(grid[0]):
+        return 0
 
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == 1:
-                    area = dfs(r, c)
-                    max_area = max(max_area, area)
+    if grid[row][col] == 0:
+        return 0
 
-        return max_area
+    if (row, col) in visited:
+        return 0
+    visited.add((row, col))
+    area = 1
+
+    for dr, dc in directions:
+        new_row = row + dr
+        new_col = col + dc
+
+        
+        area += dfs(new_row, new_col)
+        
+
+    return area
+
+def max_ar(grid):
+  
+  for i in range(len(grid)):
+      for j in range(len(grid[0])):
+
+          if grid[i][j] == 1 and (i,j) not in visited:
+              area = dfs(i,j)
+              max_area = max(max_area, area)
+
+  return max_area
+
+
