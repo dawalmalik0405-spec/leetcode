@@ -3,31 +3,33 @@ from collections import deque
 
 clones = {}
 queue  = deque()
-directions = [
-    (-1, 0),
-    (1, 0),
-    (0, -1),
-    (0, 1)
-]
+
 
 
 def clone(node):
-  for neighbor in node.neighbors:
 
-    if neighbor not in clones:
+    if node is None:
+        return None
 
-      clones[node] = node(node.val)
-      queue.append(node)
+    clones[node] = Node(node.val)
+    queue.append(node)
 
-      while queue:
+    while queue:
 
-        current = 0
+      current = queue.popleft()
+      for neighbor in current.neighbors:
+        if neighbor not in clones:
 
-        row, col = queue.popleft()
+            clones[neighbor] = Node(neighbor.val)
+            queue.append(neighbor)
+
+        clones[current].neighbors.append(clones[neighbor])
+
         
-        for dr, dc in directions:
-            new_col = col + dc
-            new_row = row + dr
+    return clones[node]
+
+
+       
             
 
 
