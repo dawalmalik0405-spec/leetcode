@@ -24,6 +24,3 @@ print(product(nums))
 
 
 
-#   return result[::-1] 
-
-# print(product(nums))
