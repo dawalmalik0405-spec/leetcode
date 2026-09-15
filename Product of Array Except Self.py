@@ -1,4 +1,5 @@
 nums = [1, 2, 3, 4]
+
 def product(nums):
   result = [1] * len(nums)
   left_product = 1
