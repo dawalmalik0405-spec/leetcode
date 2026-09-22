@@ -11,3 +11,5 @@ class MyHashSet(object):
 
     def contains(self, key):
         return self.data[key]
+
+    
