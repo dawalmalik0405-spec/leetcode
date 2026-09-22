@@ -11,3 +11,4 @@ def valid_palindrom2():
       right -= 1
 
   return True
+
